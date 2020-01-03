@@ -1,0 +1,37 @@
+div.task-description h1{
+    text-align: center;
+}
+
+div.task-description p{
+    margin: 15px 0;
+}
+
+div.task-description button {
+    border: 0;
+    border-radius: 2px;
+    height: 18px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer; 
+    transition: all .4s ease-in-out;   
+}
+
+div.task-description button.mark-done {
+    float: left;
+    background: rgb(71, 224, 105);
+}
+
+div.task-description button.mark-done:hover {
+    background: rgb(5, 124, 31);
+}
+
+div.task-description button.mark-delete {
+    float: right;
+    background: rgb(231, 109, 109);    
+}
+
+div.task-description button.mark-delete:hover {
+    background: rgb(209, 68, 68); 
+}

@@ -1,0 +1,28 @@
+div.user-detail {
+    text-align: -webkit-center;
+}
+
+div.user-detail label{
+    width: 30%;
+    height: 120px;
+    margin-bottom: 20px;
+    background-size: cover;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+div.user-detail label input{
+    display: none;
+}
+
+div.user-detail p{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+div.user-detail label img{
+    display: none;
+}

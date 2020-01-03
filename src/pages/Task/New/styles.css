@@ -1,0 +1,7 @@
+form textarea#description {
+    line-height: normal;
+    min-height: 200px;
+    font-family: 'Calamity Bold', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}

@@ -1,0 +1,15 @@
+div.user-header {
+    display: flex;
+    margin: 0 0 10px 0;
+}
+
+div.user-header img {
+    float: left;
+    width: 12%;
+}
+
+div.user-header p {
+    align-self: center;
+    font-size: 20px;
+    margin-left: 10px;
+}
