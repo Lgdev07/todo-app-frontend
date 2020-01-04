@@ -1,0 +1,50 @@
+label#photo {
+    margin-bottom: 20px;
+    border: 1px dashed;
+    background-size: cover;
+    cursor: pointer;
+    display: flex;
+    width: 30%;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    align-self: center;
+    opacity: 0.5
+}
+
+label#photo input {
+    display: none;
+}
+
+label#photo.has-thumbnail {
+    border: 0;
+    opacity: 1
+}
+
+label#photo.has-thumbnail img{
+    display: none;  
+}
+
+form.register-form > input {
+    transition: all .4s ease-in-out; 
+    height: 30px !important;
+}
+
+form.register-form > label {
+    place-items: baseline;
+    display: inline-flex;
+}
+
+form.register-form > label > span {
+    margin: 0 5px;
+}
+
+form.register-form > input.length-error {
+    border-color: crimson;
+}
+
+form.register-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}

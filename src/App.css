@@ -79,10 +79,6 @@ body, input, button {
     font-size: 16px;
 }
 
-.content form input#password {
-    -Webkit-text-security: disc;
-}
-
 .content form label span {
     font-weight: normal;
     color: #999;

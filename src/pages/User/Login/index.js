@@ -41,6 +41,7 @@ export default function Login({ history }){
             <label htmlFor="password">Password *</label>
             <input
                 id="password"
+                type="password"
                 placeholder="Type your Password"
                 value={password}
                 onChange={event => setPassword(event.target.value)}

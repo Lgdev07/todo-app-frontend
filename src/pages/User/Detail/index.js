@@ -47,8 +47,6 @@ export default function UserDetail() {
                 <input type="file" onChange={event => setPhoto(event.target.files[0])}/>
                 <img src={camera} alt="Select img"/>
             </label>
-
-            {/* <img src={user.photo_url} alt="User"/> */}
             <p>{user.login}</p>
         </div>
         <form onSubmit={handleSubmit}>
