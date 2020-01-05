@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../services/api'
-import TaskList from '../../components/TaskList/TaskList'
 import UserHeader from '../../components/UserHeader/UserHeader'
 import './styles.css'
 
@@ -9,18 +8,27 @@ export default function Dashboard() {
 
     const [tasks, setTasks] = useState([])
     const user_id = localStorage.getItem('user')
+    
+    const loadTasks = async () => {
+        const response = await api.get('/tasks?active=true', {
+            headers: { user_id },
+        })
+    
+        setTasks(response.data)
+        
+    }
+
+    const markTaskAsDone = async (id) =>{
+        await api.put(`/tasks/${id}`, {
+            active: false
+        })
+
+        loadTasks()
+    }
 
     useEffect(() => {
-        const loadTasks = async () => {
-            const response = await api.get('/tasks?active=false', {
-                headers: {
-                    user_id: user_id
-                },
-            })
-            setTasks(response.data)
-        }
         loadTasks()
-    }, [user_id])
+    }, [])
 
     return (
         <>  
@@ -28,9 +36,15 @@ export default function Dashboard() {
             <Link to="/task/new">
             <button className="btn">+ New</button>
             </Link>
-            <ul className="task-list">
+            <ul onChange={console.log('teste')} className="task-list">
                 {tasks.map(task => (
-                    <TaskList key={task._id} task={task} />
+                    <li key={task._id}>
+                    <Link to={`/task/${task._id}`} className='text-link'>
+                    <h1>{task.name}</h1>
+                    </Link>
+                    <span>{task.description}</span>
+                    <button onClick={()=>markTaskAsDone(task._id)}>Mark as Done</button>
+                    </li>
                 ))}
             </ul>
         </>

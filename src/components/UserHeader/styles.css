@@ -6,6 +6,8 @@ div.user-header {
 div.user-header img {
     float: left;
     width: 12%;
+    border-radius: 50%;
+    height: 45px;
 }
 
 div.user-header p {

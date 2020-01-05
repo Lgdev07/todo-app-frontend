@@ -5,10 +5,16 @@ import './styles.css'
 export default function TaskDetail({ match }){
 
     const [task, setTask] = useState({})
+    const { id } = match.params
+
+    const markTaskAsDone = async () =>{
+        await api.put(`/tasks/${id}`, {
+            active: false
+        })
+    }
 
     useEffect(() => {
         const loadTask = async () => {
-            const { id } = match.params
             const response = await api.get(`/tasks/${id}`)
 
             setTask(response.data)
@@ -17,13 +23,13 @@ export default function TaskDetail({ match }){
 
         loadTask()
         
-    }, [match])
+    }, [id])
 
     return (
         <div className="task-description">
             <h1>{task.name}</h1>
             <p>{task.description}</p>
-            <button className="mark-done">Mark as Done</button>
+            <button onClick={markTaskAsDone} className="mark-done">Mark as Done</button>
             <button className="mark-delete">Delete</button>
         </div>
     )
