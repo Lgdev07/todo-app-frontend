@@ -1,9 +1,22 @@
-div.task-description h1{
-    text-align: center;
+div.task-description{
+    text-align: -webkit-center;
+    
+}
+div.task-description > textarea{
+    display: block;
+    line-height: normal;
+    min-height: 200px;
+    width: 300px;
+    font-family: 'Calamity Bold', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 20px;
 }
 
-div.task-description p{
-    margin: 15px 0;
+div.task-description input.input-name{
+    display: block;
+    font-size: 25px;
+    text-align: center;
 }
 
 div.task-description button {
@@ -21,6 +34,10 @@ div.task-description button {
 div.task-description button.mark-done {
     float: left;
     background: rgb(71, 224, 105);
+}
+
+div.task-description button.mark-update {
+    background: rgb(216, 196, 16);
 }
 
 div.task-description button.mark-done:hover {
